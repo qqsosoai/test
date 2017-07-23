@@ -1,0 +1,23 @@
+$(function(){
+	$('p').on("click","a:eq(0)",function(){//首页
+		init(1);
+	});
+	$('p').on("click","a:eq(1)",function(){//上一页
+		if(pageIndex>1){
+			init(pageIndex-1);
+		}else{
+			alert('没有上一页了');
+		}
+	});
+	$('p').on("click","a:eq(2)",function(){//下一页
+		if(pageIndex<pageCount){
+			init(pageIndex+1);
+		}else{
+			alert('没有下一页了');
+		}
+		
+	});
+	$('p').on("click","a:eq(3)",function(){//末页
+		init(pageCount);
+	});
+});
